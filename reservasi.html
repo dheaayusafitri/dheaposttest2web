@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bittersweet by Najla</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-nav">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Tentang Kami</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservasi.html">Reservasi</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <div class="sewa">
+    <div class="form-style-10">
+      <h1>Reservasi<span>Bittersweet By Najla</span></h1>
+      <form name="reserved-form" id="reserved-form" method="post" action="homepage.html">
+        <div class="section"><span>1</span>Data Diri</div>
+        <div class="inner-wrap">
+          Nama :
+          <input required type="text" name="field1">
+          Alamat :
+          <textarea required name="field2"></textarea>
+          Email :
+          <input required type="email" name="field3">
+          No HP :
+          <input required type="tel" name="field4">
+          <div class="section"><span>2</span>Reservasi</div>
+          <div class="inner-wrap">
+            Room :
+            <select required name="room" id="select-room">
+              <option value="Reguler">Reguler</option>
+              <option value="VIP">VIP</option>
+            </select>
+            Menu :
+            <div class="inner-wrap">
+              <input type="checkbox" value="Menu Reguler" name="menus"> Menu Reguler
+              <input type="checkbox" value="Kopinya Bittersweet" name="menus"> Kopinya Bittersweet
+              <input type="checkbox" value="Steak" name="menus"> Steak
+              <input type="checkbox" value="Carbonara" name="menus"> Carbonara
+              <input type="checkbox" value="Bolognese" name="menus"> Bolognese
+              <input type="checkbox" value="Burger" name="menus"> Burger
+              <input type="checkbox" value="Rice" name="menus"> Rice
+              <input type="checkbox" value="Ayam Geprek" name="menus"> Ayam Geprek
+              <input type="checkbox" value="Noodles" name="menus"> Noodles
+              <input type="checkbox" value="Others" name="menus"> Others
+            </div>
+
+            <div class="section"><span>3</span>Keterangan</div>
+            <div class="inner-wrap">
+              Pembayaran :
+              <section>
+                <input type="radio" value="Tranfer" name="field6" />Tranfer
+                <input type="radio" value="Cash" name="field6" />Cash
+              </section>
+              <div class="inner-wrap">
+
+                <p>Bukti Pembayaran</p>
+                <p>(*Jika Pembayaran Secara Transfer) </p>
+                <div class="inner-wrap">
+                  <input type="file" name="field7">
+                  <div class="inner-wrap">
+                    <div class="button-section">
+                      <input type="submit" name="Sign Up" />
+                      <span class="privacy-policy">
+                        <input type="checkbox" name="field8">You agree to our Terms and Policy.
+                      </span>
+                    </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    feather.replace()
+  </script>
+  <script src="js/script.js"></script>
+  <script>
+    const form = document.querySelector('#reserved-form');
+
+    form.addEventListener('submit', reserved)
+  </script>
+</body>
+
+</html>

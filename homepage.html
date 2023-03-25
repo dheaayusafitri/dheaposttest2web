@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bittersweet by Najla</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-nav ">
+      <a href="index.html">Beranda</a>
+      <a href="profile.html">Tentang Kami</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservasi.html">Reservasi</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+      <form name="logout" action="login.html" class="form-logout hidden" method="post">
+        <button type="submit" class="logout-btn" id="log-out"><i data-feather="log-out"></i></button>
+      </form>
+      <a href="#" id="menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <section id="about" class="about">
+    <div class="row">
+      <div class="content">
+        <h3 style="font-size: 50px;">Selamat datang, <span class="username"></span></h3>
+      </div>
+    </div>
+  </section>
+  <section class="reserve-container">
+    <h2>List Reservasi</h2>
+    <br>
+    <div class="reserved-items">
+
+    </div>
+
+  </section>
+  <footer>
+    <div class="social">
+      <a href="https://www.instagram.com/bittersweet_by_najla/"><i data-feather="instagram"></i></a>
+    </div>
+    <div class="links">
+      <a href="index.html">Beranda</a>
+      <a href="profile.html">Tentang Kami</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservasi.html">Reservasi</a>
+    </div>
+    <div class="credit">
+      <p>created by <a href="#">Dhea Ayu Safitri</a> | &copy; 2023</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace()
+  </script>
+  <script src="js/script.js"></script>
+  <script>
+    const data = JSON.parse(localStorage.getItem('userLogin'));
+    const reservedData = JSON.parse(sessionStorage.getItem('reserved'));
+    const userName = document.querySelector('.username');
+
+    if (data) {
+      userName.innerHTML = data.name;
+      document.querySelector('.form-logout').classList.remove('hidden');
+    } else {
+      userName.innerHTML = `<a href="./login.html" >Login Dulu</a>`;
+    }
+
+    const form = document.querySelector('.form-logout');
+
+    form.addEventListener('submit', logout);
+
+    if (reservedData) {
+      const containerReserved = document.querySelector('.reserved-items');
+      reservedData.forEach((res) => {
+        containerReserved.innerHTML += `<div class="card">
+        <img src="${res.image ?? 'gambar/logoku.png'}" alt="Avatar" style="width:20rem; height: 20rem; margin-bottom: -7px;">
+        <div class="container">
+          <p>Nama: <b>${res.name}</b></p>
+          <p>Email: <b>${res.email}</b></p>
+          <p>Alamat: <b>${res.address}</b></p>
+          <p>Menu: <b>${res.menus.map((menu) => menu).join(',')}</b></p>
+          <p>No HP: <b>${res.noHp}</b></p>
+          <p>Pembayaran: <b>${res.payment}</b></p>
+          <p>Room: <b>${res.room}</b></p>
+        </div>
+      </div>`
+      }).join('');
+    }
+
+
+  </script>
+
+</body>
+
+</html>

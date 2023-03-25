@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bittersweet by Najla</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-nav">
+      <a href="index.html">Beranda</a>
+      <a href="profile.html">Tentang Kami</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservasi.html">Reservasi</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <section class="hero" id="home">
+    <main class="content">
+      <h1>Bitter</span> Sweet<span> By Najla</span></h1>
+      <p> Dessert Box yang terdiri dari perpaduan coffee dan cheese</p>
+      <a href="menu.html" class="detail">Look The Menu</a>
+    </main>
+  </section>
+  <div class="form-wrapper">
+    <form name="login" id="login-form" class="form" action="homepage.html" method="post">
+      <h2 style="color: black;">Login</h2>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <input id="password" type="password" name="password" placeholder="Password" required>
+      </div>
+      <a style="margin-bottom: 10px; font-size: 12px;" href="index.html#register-form">Register?</a>
+      <div class="form-group">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <div class="social">
+      <a href="https://www.instagram.com/bittersweet_by_najla/"><i data-feather="instagram"></i></a>
+    </div>
+    <div class="links">
+      <a href="index.html">Beranda</a>
+      <a href="profil.html">Tentang Kami</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservasi.html">Reservasi</a>
+    </div>
+    <div class="credit">
+      <p>created by <a href="#">Dhea Ayu Safitri</a> | &copy; 2023</p>
+    </div>
+  </footer>
+  <script>
+    feather.replace()
+  </script>
+  <script>
+  </script>
+  <script src="js/script.js"></script>
+  <script>
+    const form = document.querySelector('#login-form');
+
+    form.addEventListener('submit', loginSubmit);
+  </script>
+</body>
+
+</html>
