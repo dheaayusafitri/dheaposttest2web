@@ -13,6 +13,7 @@ POSTTEST 2
 ![daftar](https://user-images.githubusercontent.com/120159860/227739511-c07be946-1606-4047-838d-677da27d6fed.JPG)
 
 - Simpan data akun kedalam local storage
+
 ![localstorage daftar](https://user-images.githubusercontent.com/120159860/227739529-22ea7d08-d266-4f49-8ec6-846ba07c6b2f.JPG)
 
 
